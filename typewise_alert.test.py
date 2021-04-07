@@ -7,7 +7,7 @@ class TypewiseTest(unittest.TestCase):
     self.assertTrue(typewise_alert.infer_breach(20, 50, 100) == 'TOO_LOW')
     self.assertTrue(typewise_alert.check_and_alert('TO_CONTROLLER', 'PASSIVE_COOLING', 20) == 'NORMAL')
     self.assertTrue(typewise_alert.check_and_alert('TO_EMAIL', 'PASSIVE_COOLING', 60) == 'TOO_HIGH')
-    self.assertTrue(typewise_alert.check_and_alert('PASSIVE_COOLING', 60) == 'TOO_HIGH')
+    self.assertTrue(typewise_alert.classify_temperature_breach('PASSIVE_COOLING', 60) == 'TOO_HIGH')
 
 
 if __name__ == '__main__':
